@@ -4,8 +4,8 @@ import path from "path";
 import { DataSource, DataSourceOptions } from "typeorm";
 
 const setDataSourceConfig = (): DataSourceOptions => {
-  const entitiesPath: string = path.join(__dirname, "entities/**.{js,ts}");
-  const migrationsPath: string = path.join(__dirname, "migrations/**.{js,ts}");
+  const entitiesPath: string = path.join("src/entities/**.{js,ts}");
+  const migrationsPath: string = path.join("src/migrations/**.{js,ts}");
 
   const nodeEnv = process.env.NODE_ENV;
 
@@ -13,8 +13,8 @@ const setDataSourceConfig = (): DataSourceOptions => {
     return {
       type: "postgres",
       url: process.env.DATABASE_URL,
-      entities: [entitiesPath],
-      migrations: [migrationsPath],
+      entities: ["/entities/**.js"],
+      migrations: ["/migrations/**.js"],
     };
   }
 
