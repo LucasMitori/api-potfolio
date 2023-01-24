@@ -13,8 +13,8 @@ const setDataSourceConfig = (): DataSourceOptions => {
     return {
       type: "postgres",
       url: process.env.DATABASE_URL,
-      entities: ["/entities/**.js"],
-      migrations: ["/migrations/**.js"],
+      entities: [__dirname + "/entities/**.js"],
+      migrations: [__dirname + "/entities/**.js"],
     };
   }
 
