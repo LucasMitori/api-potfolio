@@ -14,7 +14,7 @@ const setDataSourceConfig = (): DataSourceOptions => {
       type: "postgres",
       url: process.env.DATABASE_URL,
       entities: [__dirname + "/entities/**.js"],
-      migrations: [__dirname + "/entities/**.js"],
+      migrations: [__dirname + "/migrations/**.js"],
     };
   }
 
